@@ -1,0 +1,15 @@
+# gigazine_crawler.py の設定。DEFAULTS をキー単位で上書きする。
+# このファイルを config.toml にコピーして使う (git 管理外)。
+
+# RSS を出しているサイトへのアクセスなので、連絡先を明示しておく
+user_agent = "Gcrawler/0.1 (personal AI radio; contact: you@example.com)"
+
+# 1回の実行で取り込む件数
+limit = 10
+
+# アクセス間隔 (秒)。相手のサーバーに負担をかけない
+request_interval_sec = 1.5
+
+# 要約に使う llama-server
+llm_base_url = "http://localhost:8080"
+summary_max_chars = 300

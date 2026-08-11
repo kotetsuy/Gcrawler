@@ -1,0 +1,15 @@
+[project]
+name = "gcrawler"
+version = "0.1.0"
+description = "GIGAZINE クローラー (AIradio のニュース供給元)"
+requires-python = ">=3.12"
+dependencies = [
+    "httpx>=0.27",
+    # 記事のスクリーンショット用。入れたあと `playwright install chromium` が要る。
+    # 無くても JSON の取り込みだけは動く (screenshot が null になる)。
+    "playwright>=1.40",
+]
+
+# アプリケーション (ライブラリではない) なのでビルドしない
+[tool.uv]
+package = false

@@ -1,0 +1,9 @@
+news/
+.venv/
+__pycache__/
+config.toml
+llm.log
+crawl.log
+
+# 個人のローカル設定。絶対パスが入る
+.claude/settings.local.json
