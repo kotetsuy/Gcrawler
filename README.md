@@ -140,3 +140,18 @@ find news -maxdepth 1 -type d -mtime +14 -exec rm -rf {} +
 
 Keep the retention longer than `dedupe_days` (7 by default). Anything shorter
 makes deleted articles look un-ingested again, and they come back in duplicate.
+
+---
+
+## License
+
+[Apache License 2.0](LICENSE). Copyright 2026 Kotetsu Yamamoto.
+
+That covers the crawler's source code. **It says nothing about what the crawler
+collects.** Article text, summaries and screenshots downloaded into `news/`
+remain the property of [GIGAZINE](https://gigazine.net/) and its authors, and
+republishing them may require permission — see [NOTICE](NOTICE). `news/` is
+git-ignored, so no article content is in this repository.
+
+Since this program talks to someone else's server, **put a real contact address
+in `config.toml`'s `user_agent` before running it.**

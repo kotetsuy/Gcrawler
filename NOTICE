@@ -1,0 +1,45 @@
+Gcrawler
+Copyright 2026 Kotetsu Yamamoto
+
+This product includes software developed as part of the Gcrawler project,
+licensed under the Apache License, Version 2.0 (see LICENSE).
+
+--------------------------------------------------------------------------
+Third-party components
+--------------------------------------------------------------------------
+
+No third-party source code is bundled in this repository. The Python
+dependencies (httpx, playwright) are installed from PyPI at setup time and
+are not redistributed here. `playwright install chromium` downloads a
+Chromium build from Microsoft, also at setup time.
+
+--------------------------------------------------------------------------
+Crawled content — read this before publishing anything you collect
+--------------------------------------------------------------------------
+
+The Apache License above covers this crawler's source code. **It says
+nothing about what the crawler collects.**
+
+Running it downloads article text, AI-generated summaries and page
+screenshots from GIGAZINE into `news/`. That directory is git-ignored and no
+article content is contained in this repository. Everything it fetches
+remains the property of GIGAZINE and its authors:
+
+- https://gigazine.net/
+
+Republishing, redistributing or broadcasting that material — including the
+summaries, which are derived from the articles — may require permission from
+the publisher. That is the operator's responsibility, not the crawler's.
+
+The crawler is written to be a polite client: it reads the public RSS feed
+rather than scraping listing pages, spaces requests out
+(`request_interval_sec`, default 1.5 s), and sends an identifying
+User-Agent. **Put a real contact address in `config.toml`'s `user_agent`
+before running it**, so the site operator can reach you.
+
+--------------------------------------------------------------------------
+Models used at runtime (not redistributed here)
+--------------------------------------------------------------------------
+
+- Qwen3.6, served via llama.cpp, is used to summarize article bodies.
+  The model carries its own license, obtained separately.

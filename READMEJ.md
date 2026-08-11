@@ -132,3 +132,18 @@ find news -maxdepth 1 -type d -mtime +14 -exec rm -rf {} +
 
 消す日数は `dedupe_days` (既定 7) より長くしておくこと。短くすると、消えた記事が
 「未取得」に戻って二重に取り込まれる。
+
+---
+
+## ライセンス
+
+[Apache License 2.0](LICENSE)。Copyright 2026 Kotetsu Yamamoto。
+
+これはクローラーの**ソースコード**に対するもので、**取ってきたものには何も
+及ばない**。`news/` に落ちる記事本文・要約・スクリーンショットの権利は
+[GIGAZINE](https://gigazine.net/) と著者にあり、再配布には許諾が要ることがある
+([NOTICE](NOTICE) 参照)。`news/` は git 管理外なので、リポジトリに記事の中身は
+含まれない。
+
+相手のサーバーにアクセスするプログラムなので、**実行前に `config.toml` の
+`user_agent` に連絡の取れるアドレスを書くこと。**
