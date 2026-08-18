@@ -63,7 +63,7 @@ or the address with environment variables:
 | --- | --- |
 | `GCRAWLER_LLAMA_SERVER` | `~/llama.cpp/build/bin/llama-server` |
 | `GCRAWLER_LLM_MODEL` | `~/qwen3.6/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf` |
-| `GCRAWLER_LLM_HOST` / `GCRAWLER_LLM_PORT` | `127.0.0.1` / `8080` |
+| `GCRAWLER_LLM_HOST` / `GCRAWLER_LLM_PORT` | `127.0.0.1` / `9931` |
 | `GCRAWLER_LLM_CTX` | `16384` |
 | `GCRAWLER_LLM_LOG` | `llm.log` (only with `--bg`) |
 
@@ -123,7 +123,7 @@ Keys written in `config.toml` override the `DEFAULTS` in `gigazine_crawler.py`.
 | `dedupe_days` | `7` | how many days back the duplicate check looks |
 | `limit` | `10` | maximum articles per run |
 | `user_agent` | `Gcrawler/0.1 (...)` | put a contact address here |
-| `llm_base_url` | `http://localhost:8080` | llama-server |
+| `llm_base_url` | `http://localhost:9931` | llama-server |
 | `llm_max_tokens` / `llm_temperature` | `512` / `0.5` | summary generation |
 | `summary_max_chars` | `300` | summary length |
 | `body_max_chars` | `3000` | how much body text is handed to the LLM |

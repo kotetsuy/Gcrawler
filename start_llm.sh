@@ -5,7 +5,7 @@
 #   ./start_llm.sh --bg         # バックグラウンドで起動し、応答するまで待つ
 #   GCRAWLER_LLM_MODEL=... ./start_llm.sh
 #
-# gigazine_crawler.py / resummarize.py は llm_base_url (既定 localhost:8080) に
+# gigazine_crawler.py / resummarize.py は llm_base_url (既定 localhost:9931) に
 # 投げるだけなので、モデルを差し替えたいときはここか環境変数を書き換える。
 # サーバーが落ちていても取り込みは止まらないが、summary は本文の冒頭で
 # 代用されるので、取り込みの前にこれを上げておくこと。
@@ -14,7 +14,7 @@ set -euo pipefail
 LLAMA_SERVER=${GCRAWLER_LLAMA_SERVER:-$HOME/llama.cpp/build/bin/llama-server}
 MODEL=${GCRAWLER_LLM_MODEL:-$HOME/qwen3.6/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf}
 HOST=${GCRAWLER_LLM_HOST:-127.0.0.1}
-PORT=${GCRAWLER_LLM_PORT:-8080}
+PORT=${GCRAWLER_LLM_PORT:-9931}
 # 記事本文 3000 字 + 要約で足りる。増やすと VRAM も増える
 CTX=${GCRAWLER_LLM_CTX:-16384}
 LOG=${GCRAWLER_LLM_LOG:-$(dirname "$(readlink -f "$0")")/llm.log}

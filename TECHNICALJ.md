@@ -117,8 +117,8 @@ AIradio 側の原稿生成の入力が消えるため、意図的にそうして
 **確認**:
 
 ```bash
-curl -s -m 3 http://localhost:8080/v1/models   # 落ちていれば exit 7
-ss -ltn | grep :8080
+curl -s -m 3 http://localhost:9931/v1/models   # 落ちていれば exit 7
+ss -ltn | grep :9931
 ```
 
 ```bash
@@ -149,7 +149,7 @@ uv run --no-sync resummarize.py --truncated-only
 - **モデルが見つからない**: `GCRAWLER_LLM_MODEL` を実在するパスに
 - **VRAM が足りない**: 既定のモデルは約 22GB (Q4_K_XL, ctx 16384) を使う。
   `GCRAWLER_LLM_CTX` を減らすか小さいモデルに差し替える
-- **ポートが埋まっている**: 応答すれば二重起動しないが、別物が 8080 を握って
+- **ポートが埋まっている**: 応答すれば二重起動しないが、別物が 9931 を握って
   いる場合は `GCRAWLER_LLM_PORT` と `config.toml` の `llm_base_url` を両方変える
 
 ### 6.3 同じ記事が二重に入る

@@ -128,8 +128,8 @@ has no input at all.
 **Check**:
 
 ```bash
-curl -s -m 3 http://localhost:8080/v1/models   # exit 7 when it is down
-ss -ltn | grep :8080
+curl -s -m 3 http://localhost:9931/v1/models   # exit 7 when it is down
+ss -ltn | grep :9931
 ```
 
 ```bash
@@ -162,7 +162,7 @@ of that log on the spot.
 - **Not enough VRAM**: the default model takes about 22GB (Q4_K_XL, ctx 16384).
   Lower `GCRAWLER_LLM_CTX` or swap in a smaller model
 - **Port already taken**: a responding server suppresses the second launch, but
-  if something else holds 8080, change both `GCRAWLER_LLM_PORT` and
+  if something else holds 9931, change both `GCRAWLER_LLM_PORT` and
   `llm_base_url` in `config.toml`
 
 ### 6.3 The same article is ingested twice

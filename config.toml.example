@@ -11,5 +11,5 @@ limit = 10
 request_interval_sec = 1.5
 
 # 要約に使う llama-server
-llm_base_url = "http://localhost:8080"
+llm_base_url = "http://localhost:9931"
 summary_max_chars = 300

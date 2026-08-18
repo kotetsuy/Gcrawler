@@ -58,7 +58,7 @@ cp config.toml.example config.toml      # User-Agent の連絡先だけは書き
 | --- | --- |
 | `GCRAWLER_LLAMA_SERVER` | `~/llama.cpp/build/bin/llama-server` |
 | `GCRAWLER_LLM_MODEL` | `~/qwen3.6/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf` |
-| `GCRAWLER_LLM_HOST` / `GCRAWLER_LLM_PORT` | `127.0.0.1` / `8080` |
+| `GCRAWLER_LLM_HOST` / `GCRAWLER_LLM_PORT` | `127.0.0.1` / `9931` |
 | `GCRAWLER_LLM_CTX` | `16384` |
 | `GCRAWLER_LLM_LOG` | `llm.log` (`--bg` のときだけ) |
 
@@ -115,7 +115,7 @@ llama-server を常駐させていない場合、cron から `start_llm.sh --bg`
 | `dedupe_days` | `7` | 重複判定でさかのぼる日数 |
 | `limit` | `10` | 1 回に取り込む上限 |
 | `user_agent` | `Gcrawler/0.1 (...)` | 連絡先を書くこと |
-| `llm_base_url` | `http://localhost:8080` | llama-server |
+| `llm_base_url` | `http://localhost:9931` | llama-server |
 | `llm_max_tokens` / `llm_temperature` | `512` / `0.5` | 要約の生成 |
 | `summary_max_chars` | `300` | 要約の文字数 |
 | `body_max_chars` | `3000` | LLM に渡す本文の長さ |

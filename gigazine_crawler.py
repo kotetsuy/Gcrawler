@@ -51,7 +51,7 @@ DEFAULTS = {
     # 1 回の実行で取り込む上限
     "limit": 10,
     "user_agent": "Gcrawler/0.1 (personal AI radio; contact: CHANGE_ME@example.com)",
-    "llm_base_url": "http://localhost:8080",
+    "llm_base_url": "http://localhost:9931",
     "llm_max_tokens": 512,
     "llm_temperature": 0.5,
     # 要約の文字数。AIradio 側の原稿生成が入力に使う
